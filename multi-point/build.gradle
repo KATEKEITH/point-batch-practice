@@ -1,0 +1,10 @@
+
+project(':multi-point'){
+    bootJar{enabled = true}
+    jar { enabled = false}
+
+    dependencies {
+        // implementation project(':multi-core')
+		implementation 'org.springframework.boot:spring-boot-starter-web'
+    }
+}
