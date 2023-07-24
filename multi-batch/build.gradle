@@ -6,5 +6,6 @@ project(':multi-batch'){
     dependencies {
       implementation project(':multi-core')
 		  implementation 'org.springframework.boot:spring-boot-starter-batch'
+      implementation 'com.h2database:h2'
     }
 }

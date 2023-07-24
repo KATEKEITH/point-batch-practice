@@ -1,4 +1,4 @@
-package com.practice.multipoint;
+package com.practice.multipoint.controller;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.practice.multicore.entity.Point;
-import com.practice.multicore.service.PointService;
+import com.practice.multipoint.service.PointService;
 
 import lombok.RequiredArgsConstructor;
 

@@ -6,5 +6,6 @@ project(':multi-point'){
     dependencies {
         // implementation project(':multi-core')
 		implementation 'org.springframework.boot:spring-boot-starter-web'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
