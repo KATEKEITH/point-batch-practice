@@ -5,24 +5,32 @@ spring:
   profiles:
     active: local
 
+  # batch.job.names: ${job.name:NONE}
 ---
 spring:
   profiles: local
+  include:
+    - core
   h2:
     console:
       path: /h2-console
       enabled: true
   datasource:
     url: jdbc:h2:mem:testdb;
+    driver-class-name: org.h2.Driver
     username: sa
     password:
-    driver-class-name: org.h2.Driver
----
-spring:
-  profiles: mysql
-  datasource:
-    hikari:
-      url: jdbc:mysql://localhost:3306/spring_batch
-      username: root
-      password: 1234
-      driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+    show-sql: ${SHOW_SQL:true}
+    properties:
+      hibernate:
+        format_sql: ${FORMAT_SQL:true}
+        default_batch_fetch_size: ${JPA_BATCH_FETCH_SIZE:100}
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    sql:
+      init:
+        mode: always
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect

@@ -4,38 +4,30 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
-bootJar.enabled = false
-
-group = 'com.practice'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
-
 repositories {
 	mavenCentral()
 	maven { url 'https://repo.spring.io/milestone' }
 	maven { url 'https://repo.spring.io/snapshot' }
 }
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+bootJar.enabled = false
 
-	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-	useJUnitPlatform()
-}
 
 subprojects {
-	// group = 'com.practice'
-	// version = '0.0.1-SNAPSHOT'
-	// sourceCompatibility = '17'
+	group = 'com.practice'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = '17'
 
     apply plugin: 'java'
     apply plugin: 'java-library'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
+
+	configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
 
 	repositories {
 		mavenCentral()
@@ -45,9 +37,16 @@ subprojects {
 
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-web'
-		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-		compileOnly 'org.projectlombok:lombok'
-		annotationProcessor 'org.projectlombok:lombok'
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+        
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation("org.junit.vintage:junit-vintage-engine") {
+            exclude group: "org.hamcrest", module: "hamcrest-core"
+        }
+        testCompileOnly 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
     }
 
     // test {
@@ -55,9 +54,19 @@ subprojects {
     // }
 }
 
-// root
 project(":multi-point") {
     dependencies {
         implementation project(":multi-core")
     }
+}
+
+project(':multi-batch') {
+    dependencies {
+        implementation project(":multi-core")
+	}
+}
+
+project(':multi-core') {
+    bootJar { enabled = false }
+    jar { enabled = true }
 }

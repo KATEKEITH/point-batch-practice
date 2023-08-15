@@ -1,0 +1,4 @@
+spring:
+  batch:
+    initialize-schema: always
+    job: false

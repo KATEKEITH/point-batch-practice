@@ -1,11 +1,21 @@
+// plugins {
+//     id 'java'
+// }
 
-project(':multi-point'){
-    bootJar{enabled = true}
-    jar { enabled = false}
+// group = 'com.practice'
+// version = '0.0.1-SNAPSHOT'
 
-    dependencies {
-        // implementation project(':multi-core')
-		implementation 'org.springframework.boot:spring-boot-starter-web'
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    }
+// repositories {
+//     mavenCentral()
+// }
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation project(':multi-core')
 }
+
+// test {
+//     useJUnitPlatform()
+// }
