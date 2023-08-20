@@ -1,8 +1,6 @@
-# point-batch-practice
-Mono Repo, Multi Module + Spring Boot + Spring Batch
+# spring-practice
 
+Mono Repo, Multi Module spring 연습장
 
-    
-spring Batch -> Message Queue <- Point api
 
 
