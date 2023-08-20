@@ -12,6 +12,9 @@ repositories {
 
 bootJar.enabled = false
 
+test {
+    useJUnitPlatform()
+}
 
 subprojects {
 	group = 'com.practice'
@@ -41,20 +44,18 @@ subprojects {
         annotationProcessor 'org.projectlombok:lombok'
         annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
         
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-        testImplementation("org.junit.vintage:junit-vintage-engine") {
-            exclude group: "org.hamcrest", module: "hamcrest-core"
-        }
+        implementation('org.springframework.boot:spring-boot-starter-web')
+        testImplementation('org.springframework.boot:spring-boot-starter-test')
         testCompileOnly 'org.projectlombok:lombok'
         testAnnotationProcessor 'org.projectlombok:lombok'
     }
 
-    // test {
-    //     useJUnitPlatform()
-    // }
+    test {
+        useJUnitPlatform()
+    }
 }
 
-project(":multi-point") {
+project(":multi-api") {
     dependencies {
         implementation project(":multi-core")
     }

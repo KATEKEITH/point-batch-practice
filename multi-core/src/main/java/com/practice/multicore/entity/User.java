@@ -21,7 +21,7 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @ToString
-@Table(name = "user")
+@Table(name = "users")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class User {
 
