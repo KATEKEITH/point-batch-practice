@@ -6,7 +6,6 @@ pluginManagement {
 	}
 }
 rootProject.name = 'multi'
-include 'multi-point'
-include 'multi-card'
+include 'multi-api'
 include 'multi-batch'
 include 'multi-core'
