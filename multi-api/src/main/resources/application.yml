@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    include:
+      - core
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+server:
+  servlet:
+    context-path: /api
+  forward-headers-strategy: framework
