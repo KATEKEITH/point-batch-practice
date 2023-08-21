@@ -1,22 +1,22 @@
-package com.practice.multicard.payment.controller;
+package com.practice.multiapi.payment.controller;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.practice.multicard.payment.dto.CardPaymentDto;
-import com.practice.multicard.payment.service.CardPaymentFactory;
-import com.practice.multicard.payment.service.CardPaymentService;
+import com.practice.multiapi.payment.dto.CardPaymentDto;
+import com.practice.multiapi.payment.service.CardPaymentFactory;
+import com.practice.multiapi.payment.service.PaymentService;
 
 @RestController
 public class PamentController {
 
-    private CardPaymentService cardPaymentService;
+    private PaymentService cardPaymentService;
 
     private CardPaymentFactory cardPaymentFactory;
 
-    public PamentController(CardPaymentService cardPaymentService) {
+    public PamentController(PaymentService cardPaymentService) {
         this.cardPaymentService = cardPaymentService;
     }
 

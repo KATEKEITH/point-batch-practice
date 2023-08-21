@@ -1,4 +1,4 @@
-package com.practice.multicard.card.woori;
+package com.practice.multiapi.payment.card.woori;
 
 import lombok.AccessLevel;
 import lombok.Builder;

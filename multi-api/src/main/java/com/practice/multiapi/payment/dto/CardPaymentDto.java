@@ -1,6 +1,6 @@
-package com.practice.multicard.payment.dto;
+package com.practice.multiapi.payment.dto;
 
-import com.practice.multicard.card.CardType;
+import com.practice.multiapi.payment.card.CardType;
 
 import lombok.AccessLevel;
 import lombok.Builder;

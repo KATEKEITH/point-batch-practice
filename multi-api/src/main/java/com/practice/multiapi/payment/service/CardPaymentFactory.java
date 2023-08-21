@@ -1,10 +1,10 @@
-package com.practice.multicard.payment.service;
+package com.practice.multiapi.payment.service;
 
 import org.springframework.stereotype.Component;
 
-import com.practice.multicard.card.CardType;
-import com.practice.multicard.card.shinhan.ShinhanCardPaymentService;
-import com.practice.multicard.card.woori.WooriCardPaymentService;
+import com.practice.multiapi.payment.card.CardType;
+import com.practice.multiapi.payment.card.shinhan.ShinhanCardPaymentService;
+import com.practice.multiapi.payment.card.woori.WooriCardPaymentService;
 
 @Component
 public class CardPaymentFactory {
@@ -20,9 +20,9 @@ public class CardPaymentFactory {
 
     }
 
-    public CardPaymentService getType(CardType type) {
+    public PaymentService getType(CardType type) {
 
-        final CardPaymentService cardPaymentService;
+        final PaymentService cardPaymentService;
 
         switch (type) {
             case WOORI:

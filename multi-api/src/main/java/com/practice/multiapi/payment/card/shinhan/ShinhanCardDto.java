@@ -1,4 +1,4 @@
-package com.practice.multicard.card.shinhan;
+package com.practice.multiapi.payment.card.shinhan;
 
 import lombok.AccessLevel;
 import lombok.Builder;

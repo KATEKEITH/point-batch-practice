@@ -1,4 +1,4 @@
-package com.practice.multicard.card;
+package com.practice.multiapi.payment.card;
 
 public enum CardType {
     SHINHAN,

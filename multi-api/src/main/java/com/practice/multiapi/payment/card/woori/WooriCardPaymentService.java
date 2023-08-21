@@ -1,12 +1,12 @@
-package com.practice.multicard.card.woori;
+package com.practice.multiapi.payment.card.woori;
 
 import org.springframework.stereotype.Service;
 
-import com.practice.multicard.payment.dto.CardPaymentDto.PaymentRequest;
-import com.practice.multicard.payment.service.CardPaymentService;
+import com.practice.multiapi.payment.dto.CardPaymentDto.PaymentRequest;
+import com.practice.multiapi.payment.service.PaymentService;
 
 @Service
-public class WooriCardPaymentService implements CardPaymentService {
+public class WooriCardPaymentService implements PaymentService {
 
     private WooriCardApi wooriCardApi;
 

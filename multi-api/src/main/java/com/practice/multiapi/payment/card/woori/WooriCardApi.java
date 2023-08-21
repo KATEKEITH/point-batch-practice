@@ -1,4 +1,4 @@
-package com.practice.multicard.card.woori;
+package com.practice.multiapi.payment.card.woori;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 
 @Component
 @AllArgsConstructor
-public class WooriCardApi  {
+public class WooriCardApi {
 
     private final RestTemplate restTemplate;
 
